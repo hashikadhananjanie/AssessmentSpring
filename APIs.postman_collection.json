@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "cbbd72e6-79df-46d8-8d2c-f8e6b57ca7dc",
+		"name": "APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"test user\",\r\n    \"email\": \"test@a.com\",\r\n    \"telephone\": \"1111-1111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/order-mgmt/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"order-mgmt",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"shirt\",\r\n    \"skuCode\": \"sh-m-black\",\r\n    \"unitPrice\": 20\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/order-mgmt/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"order-mgmt",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerId\": 1,\r\n    \"orderLines\": [\r\n        {\r\n            \"productId\": 1,\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"productId\": 2,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/order-mgmt/order",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"order-mgmt",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get orders by date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/order-mgmt/order/get-orders-by-date?date=2023-02-27",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"order-mgmt",
+						"order",
+						"get-orders-by-date"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2023-02-27"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get orders by customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/order-mgmt/order/get-orders-by-customer/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"order-mgmt",
+						"order",
+						"get-orders-by-customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get orders by product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/order-mgmt/order/get-orders-by-product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"order-mgmt",
+						"order",
+						"get-orders-by-product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
